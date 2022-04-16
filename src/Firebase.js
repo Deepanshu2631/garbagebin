@@ -28,12 +28,12 @@ if(!data){
        return (
        <div className={(e.BinLevel > 74)||(e.GasData>401) ? "comp color_red" : "comp color_green"} key={index+1} onClick={()=>history.push("/map/"+e.Latt+"a"+e.Longg+"a"+e.BinNo)}>
           {console.log(e)}
-          <h4>Bin:- {e.BinNo} </h4>
-        <h1>Gas Status:- {e.GasLevel} </h1>
+          <h2>Bin No :- {e.BinNo} </h2>
+        <h3>Gas Status:- {e.GasLevel} </h3>
        
         {/* <h1>Gas Sensor data {e.GasData} </h1> */}
         
-        <h1>Garbage level {e.BinLevel} % fill</h1>
+        <h3>Garbage level {e.BinLevel} % fill</h3>
         
         
 

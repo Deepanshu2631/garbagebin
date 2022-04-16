@@ -6,19 +6,33 @@ import Firebase from "./Firebase";
 
 function SimpleMap() {
     const {id} = useParams();
-    console.log(id.split("a"));
-    const [latt,set_latt] = useState(id.split("a")[0]);
-    const [longh,set_long] = useState(id.split("a")[1]);
-    const [no,set_no] = useState(id.split("a")[2]);
-    // 22.7250426881063, 75.87286099510544
+    const a = id.split("a");
+    console.log(a);
+
+    const LocationPin = ({ text }) => (
+      <div className="pin">
+        
+        <p className="pin-text">{text}</p>
+      </div>
+    )
     
-    const AnyReactComponent = ({ text }) => <div>{text}</div>;
+    const [latt,set_latt] = useState(a[0]);
+    const [lg,set_lg] = useState(a[1]);
+    const [no,set_no] = useState(a[2]);
+    
+    const [bno,set_bno] = useState(a[3]);
+    // 22.7250426881063, 75.87286099510544
+    const location = {
+      lat:latt,
+      lng:lg
+    }
+    const AnyReactComponent = ({ text }) => <div><h6>{text}</h6></div>;
     const val = {
         center: {
-          lat: 22.7250426881063,
-          lng: 75.87286099510544
+          lat: parseFloat(latt),
+          lng: parseFloat(lg)
         },
-        zoom: 11
+        zoom: 18
       }
     return (
       <div>
@@ -28,9 +42,12 @@ function SimpleMap() {
           defaultCenter={val.center}
           defaultZoom={val.zoom}
         >
-          <AnyReactComponent
-            text={"BinNo-"+no}
+            <AnyReactComponent
+            lat={location.lat}
+            lng={location.lng}
+            text={no + bno}
           />
+        
         </GoogleMapReact>
       </div>
       </div>

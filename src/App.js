@@ -24,7 +24,7 @@ function App() {
 
 
 <div class="row ">
-        <h3>Smart Garbage Monitoring System</h3>
+        <h1>IOT Smart Garbage Monitoring System</h1>
       </div>
           <div class="row">
         
