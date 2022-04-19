@@ -47,3 +47,18 @@ code {
   background-color: red;
   border-radius: 10px;
 }
+.divrow{
+  display: flex;
+  flex-direction: row;
+  width: 200px;
+  
+  /* background-color: ; */
+}
+.pinimg{
+  width: 50px;
+
+}
+.imgroot{
+  display: flex;
+  flex-direction: column;
+}

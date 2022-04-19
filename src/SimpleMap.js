@@ -3,6 +3,7 @@ import GoogleMapReact from 'google-map-react';
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import Firebase from "./Firebase";
+import pinnn from "./Images/pinnn.png";
 
 function SimpleMap() {
     const {id} = useParams();
@@ -20,13 +21,19 @@ function SimpleMap() {
     const [lg,set_lg] = useState(a[1]);
     const [no,set_no] = useState(a[2]);
     
-    const [bno,set_bno] = useState(a[3]);
+    const [level,set_binlevel] = useState(a[3]);
     // 22.7250426881063, 75.87286099510544
     const location = {
       lat:latt,
       lng:lg
     }
-    const AnyReactComponent = ({ text }) => <div><h6>{text}</h6></div>;
+    const AnyReactComponent = ({ text }) =>
+     <div className="imgroot">
+       <img src={pinnn} className="pinimg" alt="blank"/>
+       <div className="divrow">
+         <h6>{text}</h6>
+        </div>
+    </div>;
     const val = {
         center: {
           lat: parseFloat(latt),
@@ -45,7 +52,7 @@ function SimpleMap() {
             <AnyReactComponent
             lat={location.lat}
             lng={location.lng}
-            text={no + bno}
+            text={"Bin NO:- "+ no + "-" +level+"%"}
           />
         
         </GoogleMapReact>

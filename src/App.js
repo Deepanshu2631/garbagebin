@@ -24,15 +24,15 @@ function App() {
 
 
 <div class="row ">
-        <h1>IOT Smart Garbage Monitoring System</h1>
+        <h1>IOT Based Smart Garbage Monitoring System</h1>
       </div>
           <div class="row">
         
               <div class="col-md-5  ">
-                  <h3>City: Indore</h3>
+                  <h2>City: Indore</h2>
             </div>
             <div class="col-md-5  ">
-                    <h4>{new Date().toLocaleString() + ""}</h4>
+                    <h4>Date/Time :- {new Date().toLocaleString() + ""}</h4>
               </div>
         </div>
       </div>

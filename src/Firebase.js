@@ -12,7 +12,7 @@ function FApp() {
   const [data, set_data] = useState();
 
   useEffect(() => {
-    fetch("https://nodemcudeep-default-rtdb.firebaseio.com/.json")
+    fetch("https://smartgarbage-f4f3b-default-rtdb.firebaseio.com/.json")
     .then(response => response.json())
     .then(data => set_data(data))
   },[data])
@@ -26,7 +26,7 @@ if(!data){
     <div className="App">
 {Object.values(data.Bins).map((e,index=0)=>{
        return (
-       <div className={(e.BinLevel > 74)||(e.GasData>401) ? "comp color_red" : "comp color_green"} key={index+1} onClick={()=>history.push("/map/"+e.Latt+"a"+e.Longg+"a"+e.BinNo)}>
+       <div className={(e.BinLevel > 74)||(e.GasData>401) ? "comp color_red" : "comp color_green"} key={index+1} onClick={()=>history.push("/map/"+e.Latt+"a"+e.Longg+"a"+e.BinNo+"a"+e.BinLevel)}>
           {console.log(e)}
           <h2>Bin No :- {e.BinNo} </h2>
         <h3>Gas Status:- {e.GasLevel} </h3>
